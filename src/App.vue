@@ -6,8 +6,11 @@
 </template>
 
 <script>
+import request from "./helpers/request"
+
+window.request = request
 export default {
-  name: 'App'
+  name: "App"
 }
 </script>
 
