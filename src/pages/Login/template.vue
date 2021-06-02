@@ -1,6 +1,6 @@
 <template>
-  <div id="index">
-    首页
+  <div id="login">
+    登录界面
   </div>
 </template>
 <script src="./template.js"></script>

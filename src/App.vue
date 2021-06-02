@@ -1,16 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <Header id="header"></Header>
+    <main id="main">
+      <router-view/>
+    </main>
+    <Footer id="footer"></Footer>
   </div>
 </template>
 
 <script>
 import request from "./helpers/request"
+import Header from './components/header'
+import Footer from './components/footer'
 
 window.request = request
 export default {
-  name: "App"
+  name: "App",
+  components: {
+    Header, Footer
+  }
 }
 </script>
 
