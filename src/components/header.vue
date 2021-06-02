@@ -4,7 +4,7 @@
       <h1>Let's share</h1>
       <p>精品博客汇聚</p>
       <div class="btns">
-        <el-button>立即登录</el-button>
+        <el-button >立即登录</el-button>
         <el-button>注册账号</el-button>
       </div>
     </template>
@@ -15,6 +15,7 @@
     </template>
   </header>
 </template>
+
 <script>
 
 export default {
@@ -25,11 +26,13 @@ export default {
   }
 }
 </script>
+
+
 <style lang="less">
 
 @import "../assets/base.less";
 
-header {
+header.no-login {
   padding: 0 12% 30px 12%;
   background: @bgColor;
   display: grid;
@@ -55,6 +58,36 @@ header {
     margin: 20px 5px 0;
   }
 }
+
+
+header.login {
+  display: flex;
+  align-items: center;
+  background: @bgColor;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 40px;
+    text-transform: uppercase;
+    flex: 1;
+  }
+
+  .edit {
+    color: #fff;
+    font-size: 30px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin-left: 15px;
+  }
+}
+
 
 
 </style>
