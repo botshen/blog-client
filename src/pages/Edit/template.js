@@ -1,19 +1,19 @@
-import blog from '@/api/blog'
+import blog from "@/api/blog"
 
 export default {
-  data () {
+  data() {
     return {
       blogId: null,
-      title: '',
-      description: '',
-      content: '',
+      title: "",
+      description: "",
+      content: "",
       atIndex: false
     }
   },
 
   created() {
     this.blogId = this.$route.params.blogId
-    blog.getDetail({ blogId: this.blogId }).then(res => {
+    blog.getDetail({blogId: this.blogId}).then(res => {
       this.title = res.data.title
       this.description = res.data.description
       this.content = res.data.content
@@ -23,10 +23,15 @@ export default {
 
   methods: {
     onEdit() {
-      blog.updateBlog({ blogId: this.blogId }, { title: this.title, content: this.content, description: this.description, atIndex: this.atIndex})
+      blog.updateBlog({blogId: this.blogId}, {
+        title: this.title,
+        content: this.content,
+        description: this.description,
+        atIndex: this.atIndex
+      })
         .then(res => {
           this.$message.success(res.msg)
-          this.$router.push({ path: `/detail/${res.data.id}`})
+          this.$router.push({path: `/detail/${res.data.id}`})
         })
     }
   }
